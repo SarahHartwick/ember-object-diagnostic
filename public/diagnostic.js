@@ -37,8 +37,8 @@ const Cart = Ember.Object.extend({
   },
   orders: [],
   totalPrice: Ember.computed('orders', function() {
-    let orders= this.get('orders');
-    return orders.reduce((p,c) => { return p.orderPrice + c.orderPrice } );
+    let orders = this.get('orders');
+    return orders.reduce((p,c) => { return p.get('orderPrice') + c.get('orderPrice') } );
   })
 });
 
